@@ -44,8 +44,7 @@ This script applies Ten-Crop TTA and generates the final `prediction.csv` using 
 | **ResNet-101 Variant (ResNeXt)** | 0.8667 | 0.94 | Modified with Grouped Convolutions |
 | **Weighted Ensemble** | **N/A** | **0.95** | **Final Submission (0.5:0.5 Ratio)** |
 
-
-![prediction score(public)](prediction score.png)
+![prediction score(public)](prediction_score.png)
 
 ## Training Hyperparameters
 
