@@ -41,9 +41,10 @@ This script applies Ten-Crop TTA and generates the final `prediction.csv` using 
 
 | Method | Best Val Acc | Public Score (Test) | Remarks |
 | :--- | :---: | :---: | :--- |
-| **ResNet-101 (Baseline)** | 0.8833 | 0.930 | Standard Residual Network |
-| **ResNet-101 Variant (ResNeXt)** | 0.8667 | 0.941 | Modified with Grouped Convolutions |
-| **Weighted Ensemble** | **N/A** | **0.950** | **Final Submission (0.5:0.5 Ratio)** |
+| **ResNet-101 (Baseline)** | 0.8833 | 0.93 | Standard Residual Network |
+| **ResNet-101 Variant (ResNeXt)** | 0.8667 | 0.94 | Modified with Grouped Convolutions |
+| **Weighted Ensemble** | **N/A** | **0.95** | **Final Submission (0.5:0.5 Ratio)** |
+![prediction score(public)](prediction score.png)
 
 ## Training Hyperparameters
 
