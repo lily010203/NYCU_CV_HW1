@@ -33,9 +33,7 @@ Execute the training scripts for each backbone respectively. The scripts will au
 * **ResNeXt-101**: Run `ResNeXt-101.py`.
 
 ### 2. Ensemble Inference Phase
-Ensure `best_resnet.pth` and `best_resnext.pth` are in the working directory, then run:
-```python
-python Ensemble.py
+Ensure `best_resnet.pth` and `best_resnext.pth` are in the working directory, then run `Ensemble.py`.
 ```
 This script applies Ten-Crop TTA and generates the final `prediction.csv` using a weighted average ($0.5:0.5$).
 
