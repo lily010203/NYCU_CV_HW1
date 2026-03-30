@@ -30,11 +30,29 @@ The workflow is divided into two phases: Training and Ensemble Inference.
 
 ### 1. Training Phase
 Execute the training scripts for each backbone respectively. The scripts will automatically save the best model weights (`.pth`) and training logs (`.csv`).
-* **ResNet-101**: Run `resnet101_train.py`.
-* **ResNeXt-101**: Run `resnext101_train.py`.
-    > *Note: Both scripts support automatic resuming from the last saved checkpoint in case of system interruptions.*
+* **ResNet-101**: Run `ResNet-101.py`.
+* **ResNeXt-101**: Run `ResNeXt-101.py`.
 
 ### 2. Ensemble Inference Phase
-Ensure `best_model_resnet101.pth` and `best_resnext.pth` are in the working directory, then run:
+Ensure `best_resnet.pth` and `best_resnext.pth` are in the working directory, then run:
 ```python
-python ensemble_inference.py
+python Ensemble.py
+```
+This script applies Ten-Crop TTA and generates the final `prediction.csv` using a weighted average ($0.5:0.5$).
+
+## Performance Snapshot
+
+| Method | Best Val Acc | Public Score (Test) | Remarks |
+| :--- | :---: | :---: | :--- |
+| **ResNet-101 (Baseline)** | 0.8833 | 0.930 | Standard Residual Network |
+| **ResNet-101 Variant (ResNeXt)** | 0.8667 | 0.941 | Modified with Grouped Convolutions |
+| **Weighted Ensemble** | **N/A** | **0.950** | **Final Submission (0.5:0.5 Ratio)** |
+
+## Training Hyperparameters
+
+* **Optimizer**: AdamW (Weight Decay: $1 \times 10^{-2}$)
+* **Learning Rate**: Initial $5 \times 10^{-5}$ with **CosineAnnealingLR** scheduler
+* **Batch Size**: 64 (Effective size via Gradient Accumulation)
+* **Data Augmentation**: TrivialAugmentWide + RandomErasing ($p=0.2$)
+* **Regularization**: Label Smoothing (0.1) + Dropout (0.4)
+* **Inference Technique**: **Ten-Crop TTA** (Test-Time Augmentation)
