@@ -137,7 +137,7 @@ def main():
             if phase == 'val' and epoch_acc > best_acc:
                 best_acc = epoch_acc
                 state = model.module.state_dict() if gpu_count > 1 else model.state_dict()
-                torch.save(state, 'best_model_resnet101.pth')
+                torch.save(state, 'best_resnet.pth')
                 print(f"目前發現的最佳模型：{best_acc:.4f}")
 
         # 每個Epoch結束後儲存CSV ->才不用全部重跑
