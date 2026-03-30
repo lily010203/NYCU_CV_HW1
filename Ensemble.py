@@ -9,7 +9,7 @@ from torch.amp import autocast
 
 # 路徑
 RESNET_PATH = '/kaggle/input/datasets/liupeilinlily/my-checkpoints/best_resnet.pth'
-RESNEXT_PATH = '/kaggle/input/datasets/liupeilinlily/my-checkpoints/best_resnext (1).pth'
+RESNEXT_PATH = '/kaggle/input/datasets/liupeilinlily/my-checkpoints/best_resnext.pth'
 TEST_DIR = '/kaggle/input/datasets/liupeilinlily/computer-vision-hw1/data/test'
 NUM_CLASSES = 100
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
