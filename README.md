@@ -17,7 +17,6 @@ This project aims to solve a 100-class image classification task using deep resi
     pip install torch torchvision pandas tqdm Pillow
     ```
 * **Data Structure**:
-    Ensure the dataset is organized as follows:
     ```text
     /data/
     ├── train/
